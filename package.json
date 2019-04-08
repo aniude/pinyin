@@ -18,13 +18,13 @@
   ],
   "homepage": "http://pinyin.hotoo.me/",
   "author": "闲耘 <hotoo.cn@gmail.com>",
-  "main": "lib/index.js",
+  "main": "dist/web-pinyin.js",
+  "scripts": {
+    "build": "NODE_ENV=production webpack --progress",
+    "dev": "NODE_ENV=development webpack-dev-server --hot --inline"
+  },
   "bin": {
     "pinyin": "./bin/pinyin"
-  },
-  "directories": {
-    "example": "examples",
-    "test": "tests"
   },
   "repository": {
     "type": "git",
@@ -33,38 +33,24 @@
   "bugs": {
     "url": "https://github.com/hotoo/pinyin/issues"
   },
-  "scripts": {
-    "test": "make test"
-  },
   "dependencies": {
     "commander": "~1.1.1",
     "object-assign": "^4.0.1"
   },
-  "optionalDependencies": {
-    "nodejieba": "^2.2.1"
-  },
   "devDependencies": {
+    "babel-core": "^6.22.1",
+    "babel-loader": "^7.1.1",
+    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-preset-env": "^1.2.1",
+    "babel-preset-stage-2": "^6.22.0",
     "benchmark": "~1.0.0",
     "eslint": "~0.24.0",
     "expect.js": "~0.3.1",
     "istanbul": "~0.3.17",
     "mocha": "1.17.1",
-    "request": "~2.68.0"
+    "request": "~2.68.0",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
   },
-  "spm": {
-    "main": "lib/web-pinyin.js",
-    "devDependencies": {
-      "expect.js": "0.3.1",
-      "url": "1.2.0"
-    },
-    "build": {
-      "babel": {}
-    },
-    "tests": "tests/*-spec.js",
-    "dependencies": {
-      "object-assign": "~4.0.1"
-    }
-  },
-  "browser": "lib/web-pinyin.js",
   "license": "MIT"
 }
