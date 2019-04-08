@@ -25,7 +25,6 @@ tmp/*
 Desktop.ini
 Thumb.db
 .cache/*
-dist/
 npm-debug.log
 spm_modules/
 tools/dict/error.log
